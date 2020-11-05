@@ -1,0 +1,26 @@
+.app{
+    &__container{
+        display: flex;
+    }
+    &__navigation-container{
+        width: 30%;
+        background-color: #1B4F70;
+        min-height: 100vh;
+    }
+    &__navigation-list{
+        padding-top: 3rem;
+        color: white;
+        li{
+            margin-top: 1.5rem;
+            
+        }
+        .active{
+            color: #7EFFB8;
+        }
+    }
+    &__people-list{
+        width: 69%;
+        min-height: 100vh;
+        padding: 2rem;
+    }
+}

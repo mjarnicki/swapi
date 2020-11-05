@@ -1,0 +1,16 @@
+<a routerLink="/" > &lt; Powrót</a>
+
+<app-loader *ngIf="!singlePerson"></app-loader>
+<section *ngIf="singlePerson" class="single-person__section">
+    <img src="/assets/img/plug.png" class="single-person__plug" alt="">
+    <div>
+        <h1>{{singlePerson.name}}</h1>
+        <p>Wzrost: {{singlePerson.height}}</p>
+        <p>Waga: {{singlePerson.mass}}</p>
+        <p>Płeć: {{singlePerson.gender}}</p>
+        <p>Kolor włosów: {{singlePerson.hair_color}}</p>
+        <p>Kolor skóry: {{singlePerson.skin_color}}</p>
+        <p>Kolor oczu: {{singlePerson.eye_color}}</p>
+        <p>Data urodzenia: {{singlePerson.birth_year}}</p>
+    </div>
+</section>

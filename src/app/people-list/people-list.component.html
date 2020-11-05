@@ -1,0 +1,30 @@
+<form #f="ngForm" (ngSubmit)="filterList(f)">
+    <input 
+        type="text" 
+        name="name" 
+        #name="ngModel"
+        ngModel 
+        required 
+        value="{{this.searchResult}}"
+        placeholder="podaj nazwę" 
+        class="people-list__input">
+    <button class="people-list__button">Szukaj</button>
+</form>
+
+<p *ngIf="searchResult">Wyniki wyszukiwania dla: <strong>{{searchResult}}</strong></p>
+
+<app-loader *ngIf="!peopleList"></app-loader>
+
+<ng-container *ngIf="peopleList">
+    <a [routerLink]="[person.url | returnId]" *ngFor="let person of peopleList" class="people-list__tile">
+        <img src="/assets/img/plug.png" alt="zaślepka" class="people-list__tile-image">
+        <div>
+            <h2 class="people-list__tile-title">{{person.name}}</h2>
+            <p>Wzrost: {{person.height}}</p>
+            <p>Waga: {{person.mass}}</p>
+            <p>Kolor włosów: {{person.hair_color}}</p>
+            <p>Kolor skóry: {{person.skin_color}}</p>
+            <p>Url: {{person.url | returnId}}</p>
+        </div>
+    </a>
+</ng-container>
